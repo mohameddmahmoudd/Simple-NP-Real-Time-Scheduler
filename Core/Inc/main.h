@@ -53,6 +53,25 @@ extern "C" {
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
+/*
+@brief A simple task to toggle a green LED.
+Arguments: 	void
+Return:		void
+ */
+void GreenLedTask(void);
+/*
+@brief A simple task to toggle a blue LED.
+Arguments: 	void
+Return:		void
+ */
+void BlueLedTask(void);
+/*
+@brief A simple task to toggle a yellow LED.
+Arguments: 	void
+Return:		void
+ */
+void YellowLedTask(void);
+
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
