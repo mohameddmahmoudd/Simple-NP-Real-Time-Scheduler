@@ -58,15 +58,30 @@ static void MX_GPIO_Init(void);
 
 /* USER CODE END 0 */
 
+
+/*
+A simple task to toggle a green LED.
+Arguments: 	void
+Return:		void
+ */
+void GreenLedTask(void);
+/*
+A simple task to toggle a blue LED.
+Arguments: 	void
+Return:		void
+ */
+void BlueLedTask(void);
+/*
+A simple task to toggle a yellow LED.
+Arguments: 	void
+Return:		void
+ */
+void YellowLedTask(void);
+
 /**
   * @brief  The application entry point.
   * @retval int
   */
-void GreenLedTask(void);
-
-void BlueLedTask(void);
-
-void YellowLedTask(void);
 
 int main(void)
 {
@@ -100,15 +115,18 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   RTOS_CreateTask(PRIORITY_0,1000, BlueLedTask);
+  /*Creating a task with the highest priotity and 1000 ms periodicity*/ 
 
   RTOS_CreateTask(PRIORITY_1,2000, YellowLedTask);
-
+  /*Creating a task with the second highest priotity and 2000 ms periodicity*/
+	
   RTOS_CreateTask(PRIORITY_2,5000, GreenLedTask);
+  /*Creating a task with the third highest priotity and 5000 ms periodicity*/
 
   while (1)
   {
     /* USER CODE END WHILE */
-	   //HAL_GPIO_WritePin(GPIOC,GPIO_PIN_15, 1);
+	   
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
