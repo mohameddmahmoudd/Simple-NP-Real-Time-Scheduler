@@ -59,25 +59,6 @@ static void MX_GPIO_Init(void);
 /* USER CODE END 0 */
 
 
-/*
-A simple task to toggle a green LED.
-Arguments: 	void
-Return:		void
- */
-void GreenLedTask(void);
-/*
-A simple task to toggle a blue LED.
-Arguments: 	void
-Return:		void
- */
-void BlueLedTask(void);
-/*
-A simple task to toggle a yellow LED.
-Arguments: 	void
-Return:		void
- */
-void YellowLedTask(void);
-
 /**
   * @brief  The application entry point.
   * @retval int
@@ -218,43 +199,68 @@ void Error_Handler(void)
   /* USER CODE END Error_Handler_Debug */
 }
 
+/*
+@brief A simple task to toggle a blue LED.
+Arguments: 	void
+Return:		void
+ */
 void BlueLedTask(void)
 {
-	static uint8 state =0;
+	static uint8 state =0; /*Intializing the state to toggle from*/
 	if(state == 0){
 		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, GPIO_PIN_SET);
-		state = 1;
+		/*LED ON*/
+		state = 1; 
+		/*Toggling State*/
 	}
 	else
 	{
 		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, GPIO_PIN_RESET);
+		/*LED OFF*/
 		state = 0;
+		/*Toggling State*/
 	}
 }
+/*
+@brief A simple task to toggle a green LED.
+Arguments: 	void
+Return:		void
+ */
 void GreenLedTask(void)
 {
-	static uint8 state =0;
+	static uint8 state =0; /*Intializing the state to toggle from*/
 	if(state == 0){
-	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_15,1);
-	state = 1;
+		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_15,1);
+		/*LED ON*/
+		state = 1;
+		/*Toggling State*/
 	}
 	else
 	{
-		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_15,0);
-		state = 0;
+		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_15,0); /*LED OFF*/
+		state = 0; 
+		/*Toggling State*/
 	}
 }
+/*
+@brief A simple task to toggle a yellow LED.
+Arguments: 	void
+Return:		void
+ */
 void YellowLedTask(void)
 {
-	static uint8 state =0;
+	static uint8 state =0;	/*Intializing the state to toggle from*/
 	if(state == 0){
-	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,1);
-	state = 1;
+		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,1);
+		/*LED ON*/
+		state = 1;
+		/*Toggling State*/
 	}
 	else
 	{
 		HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,0);
 		state = 0;
+		/*Toggling State*/
 	}
 }
 
