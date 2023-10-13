@@ -16,7 +16,7 @@ typedef struct Tasks
 
 }TaskTCB;
 
-void RTOS_Init(void);
+
 void RTOS_Scheduler(void);
 void RTOS_CreateTask(uint8 priority, uint16 periodicity, void (*ptrToFunc)(void));
 
