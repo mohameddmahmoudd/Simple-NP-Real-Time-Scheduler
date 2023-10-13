@@ -11,7 +11,6 @@
 typedef struct Tasks
 {
 	uint16 Periodicity;
-	uint16 Delay;
 	void (*ptrToFunc)(void);
 
 }TaskTCB;
