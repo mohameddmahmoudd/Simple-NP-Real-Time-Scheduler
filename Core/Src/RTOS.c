@@ -6,14 +6,6 @@ TaskTCB Tasks[NUM_OF_TASKS];
 /*Tick counts that will be incrementing every 1 ms*/
 volatile uint16 tickCnt = 0;
 
-void RTOS_Init(void)
-{
-
-
-
-
-}
-
 void RTOS_CreateTask(uint8 priority, uint16 periodicity, void (*ptrToFunc)(void))
 {
 	/*Priorities corresponds to the array index in the OS tasks array*/
